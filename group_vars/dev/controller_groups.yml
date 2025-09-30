@@ -1,3 +1,15 @@
 ---
-controller_groups_dev: []
-...
+controller_groups_dev:
+- name: PSQL_Servers
+  description: Group for Postgres SQL Servers
+  inventory: Default
+  variables:
+    myvars: example1
+  hosts:
+   - PSQL1
+   - PSQL2
+   - PSQL3
+  children:
+   - group1
+   - group2
+   - group3

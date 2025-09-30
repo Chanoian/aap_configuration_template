@@ -3,23 +3,20 @@ version: 3
 
 dependencies:
   galaxy: requirements.yml
+  system: system.txt
+  python: requirements.txt
 
 images:
   base_image:
-    name: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
+    name: registry.redhat.io/ansible-automation-platform-25/ee-supported-rhel8:latest 
 
 options:
   package_manager_path: "/usr/bin/microdnf"
 
 additional_build_steps:
   prepend_base:
-    - RUN whoami
-    - RUN cat /etc/os-release
-    - RUN echo PKGMGR = $PKGMGR, PYCMD = $PYCMD
-    - RUN $PYCMD -m pip install --upgrade pip
+    - RUN $PKGMGR install -y gcc make python3.11-devel pkg-config systemd-devel && $PKGMGR clean all
   append_final:
-    # Verify installed packages have compatible dependencies
-    # Logged issue https://github.com/ansible/ansible-builder/issues/416
     - RUN pip3 check
     # Clean up
     - >
