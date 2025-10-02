@@ -4,5 +4,6 @@ collections/*
 .vscode/
 playbooks/*.json
 playbook/*.json
+ee/playbooks/*.json
 *.log
 ee/context

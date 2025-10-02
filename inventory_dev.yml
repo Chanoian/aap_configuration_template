@@ -6,17 +6,18 @@ all:
         127.0.0.1: # Due to the way this template is configured, DO NOT CHANGE THIS!
       vars:
         connection: local
-    automationcontroller:
-      hosts:
-        HERE: https://aap-controller-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
 
- #   automationhub:
- #     hosts:
- #       HERE: # FQDN of Automation Hub host(s). Can be commented out if not in use.
+#    automationhub:
+#      hosts: aap-hub-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
+
+#    automationedacontroller:
+#      hosts: aap-eda-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
+  
+#    automationcontroller:
+#      hosts: aap-controller-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
 
  #   automationedacontroller:
- #     hosts:
- #       HERE: # FQDN of Automation EDA Controller host(s)
+ #     hosts: aap-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
 
 #    builder:
 #      hosts:
@@ -28,4 +29,7 @@ all:
 #        HERE:
   vars:
     env: dev
+    aap_host: aap-aap.apps.cluster-fwxnj-1.dynamic.redhatworkshops.io
+    aap_pass: XXXXXXXXXXXX
+    aap_user: admin
 ...

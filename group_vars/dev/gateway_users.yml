@@ -1,3 +1,14 @@
 ---
-aap_user_accounts_dev: []
+aap_user_accounts_dev:
+  - username: api_user
+    is_superuser: false
+    password: "test1234"
+  - username: token_user
+    # Currently not working
+    # groups:
+    #   - "admin"
+    append: true
+    is_superuser: true
+    password: "test1234"
+    state: present
 ...

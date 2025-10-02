@@ -1,16 +1,17 @@
----
 collections:
-  - name: ./collections/ansible-controller-4.6.19.tar.gz
-    type: file
-  - name: ./collections/ansible-eda-2.10.0.tar.gz
-    type: file
-  - name: ./collections/ansible-hub-1.0.2.tar.gz
-    type: file
-  - name: ./collections/ansible-platform-2.5.20250702.tar.gz
-    type: file
-  - name: infra.ee_utilities
-    type: galaxy
-  - name: infra.aap_utilities
-    type: galaxy
-  - name: infra.aap_configuration
-    type: galaxy
+- name: ./collections/ansible-controller-4.6.19.tar.gz
+  type: file
+- name: ./collections/ansible-eda-2.10.0.tar.gz
+  type: file
+- name: ./collections/ansible-hub-1.0.2.tar.gz
+  type: file
+- name: ./collections/ansible-platform-2.5.20250702.tar.gz
+  type: file
+- name: infra.ee_utilities
+  type: galaxy
+- name: infra.aap_utilities
+  type: galaxy
+- name: infra.ee_utilities
+  type: galaxy
+- name: infra.aap_configuration
+  type: galaxy

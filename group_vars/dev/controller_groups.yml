@@ -2,14 +2,14 @@
 controller_groups_dev:
 - name: PSQL_Servers
   description: Group for Postgres SQL Servers
-  inventory: Default
+  inventory: test_inventory
   variables:
     myvars: example1
   hosts:
-   - PSQL1
-   - PSQL2
-   - PSQL3
+   - PSQL111
+   - PSQL222
+   - PSQL333
   children:
-   - group1
-   - group2
-   - group3
+   - group111
+   - group222
+   - group333

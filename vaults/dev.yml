@@ -27,15 +27,15 @@ hub_api_user_pass: ''
 
 # This is the password of the 'api_user' user that the playbook will create
 # in the controller(s)
-controller_api_user_pass: ''
+controller_api_user_pass: 'Nzc0MDU1_1'
 
 # The admin password for the gateway; if unspecified, the default
 # is Password1234!
-aap_pass: ''
+aap_pass: 'Nzc0MDU1_1'
 
 # The admin password for the private Automation Hub; if unspecified, the default
 # is Password1234!
-hub_pass: ''
+hub_pass: 'Nzc0MDU1_1'
 
 # The installed AAP Hub token, commented in collection's README.md and referenced in
 # Controller config tasks.

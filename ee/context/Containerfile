@@ -1,4 +1,4 @@
-ARG EE_BASE_IMAGE="registry.redhat.io/ansible-automation-platform-25/ee-supported-rhel8:latest"
+ARG EE_BASE_IMAGE="registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest"
 ARG PYCMD="/usr/bin/python3"
 ARG PKGMGR_PRESERVE_CACHE=""
 ARG ANSIBLE_GALAXY_CLI_COLLECTION_OPTS=""
@@ -18,7 +18,6 @@ ARG PKGMGR
 
 COPY _build/scripts/ /output/scripts/
 COPY _build/scripts/entrypoint /opt/builder/bin/entrypoint
-RUN $PKGMGR install -y gcc make python3.11-devel pkg-config systemd-devel && $PKGMGR clean all
 RUN /output/scripts/pip_install $PYCMD
 
 # Galaxy build stage
@@ -78,9 +77,6 @@ RUN chmod ug+rw /etc/passwd
 RUN mkdir -p /runner && chgrp 0 /runner && chmod -R ug+rwx /runner
 WORKDIR /runner
 RUN $PYCMD -m pip install --no-cache-dir 'dumb-init==1.2.5'
-RUN pip3 check
-RUN $PKGMGR update -y && $PKGMGR clean all && rm -rf /var/cache/{dnf,yum} && rm -rf /var/lib/dnf/history.* && rm -rf /var/log/*
-
 RUN rm -rf /output
 LABEL ansible-execution-environment=true
 USER 1000
